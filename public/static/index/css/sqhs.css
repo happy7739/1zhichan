@@ -1,0 +1,12 @@
+.index_cp{width:1023px;margin:0 auto; height:209px; text-align:center; overflow:hidden; } 
+.rollBox{width:1023px;height:209px; }
+.rollBox .LeftBotton{height:58px;width:26px;background: url(/static/index/image/xleft.png) no-repeat;display:inline;cursor:pointer; margin:79px 13px 0 0;float:left;}
+.rollBox .RightBotton{height:58px;width:26px;background:url(/static/index/image/xright.png) no-repeat;display:inline;cursor:pointer; margin:79px 0 0 13px ;float:left; }
+.rollBox .Cont{width:945px;overflow:hidden;float:left;}
+.rollBox .ScrCont{width:10000000px;}
+.rollBox .Cont .pic{width:315px;float:left;height:209px;text-align:center; background:none;}
+ 
+.rollBox #List1,.rollBox #List2{float:left;}
+.clearfix1 {_zoom: 1;}
+
+

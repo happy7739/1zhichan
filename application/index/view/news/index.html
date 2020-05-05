@@ -1,0 +1,102 @@
+{extend name="public/base" /}
+
+<!-- 当前页面的样式及JS -->
+{block name="custom"}
+<style>
+.case_page{width: 750px!important;}
+.case_page ul li{font-size: 20px!important;}
+.case_page ul li:first-child{width: 65px!important;}
+.case_page ul li:last-child{width: 65px!important;}
+.case_page{
+    width: 1200px;
+    height: 25px;
+    margin:30px auto;
+}
+.case_page ul{
+    display:table;
+    text-align:center;
+    margin:0 auto;
+}
+.case_page ul li{
+    width: 23px;
+    height: 23px;
+    float: left;
+    margin-left: 14px;
+    font-size: 14px;
+    text-align: center;
+}
+.case_page ul li a{color: #999999;}
+.case_page ul li:first-child{
+    width: 45px;
+    height: 25px;
+}
+.case_page ul li:last-child{
+    width: 45px;
+    height: 25px;
+}
+</style>
+{/block}
+
+<!--内容-->
+{block name="main"}
+
+<div class="a1" align="center">
+    <div class="a15" align="center">
+        <table width="910" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td height="50">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div align="left" class="font14" style="line-height: 0px;">
+                        <div class="a1" align="center">
+                            <div class="a17" align="center">
+                            {notempty name="data"}
+                            {volist name="data" id="val"}
+                                <table width="930" border="0" cellpadding="0" cellspacing="0" align="center"> <tbody><tr><td height="30"></td></tr></tbody></table>
+                                <table width="930" border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#efefef">
+                                    <tbody>
+                                    <tr>
+                                        <td width="202" align="left">
+                                            <a href="{:url('index/news/details')}?cat={$cat}&page={$page}&id={$val.id}" title="{$val.title}">
+                                                <img src="{$val.img|get_file_path}" width="202" height="126">
+                                            </a>
+                                        </td>
+                                        <td width="30"></td>
+                                        <td width="659" align="left" valign="top">
+                                            <div style="position: absolute; padding-top: 18px; width: 659px;">
+                                                <span class="font16">
+                                                    <a href="{:url('index/news/details')}?cat={$cat}&page={$page}&id={$val.id}" title="{$val.title}"><b>{$val.title}</b></a>
+                                                </span>
+                                                <div class="font14" style="line-height: 28px; padding-top: 18px;">
+                                                    {$val.desc}
+                                                </div>
+                                                <div style="position: absolute; top: 18px; right: 0;" class="font14">{$val.time}</div>
+                                            </div>
+                                        </td>
+                                        <td width="39"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            {/volist}
+                            {/notempty}
+                                <!-- 分页 -->
+                                <div class="case_page">
+                                    {$render|raw}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="30">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+{/block}

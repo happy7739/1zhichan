@@ -1,0 +1,186 @@
+<!--底部-->
+﻿<table width="1024" align="center" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td height="50">
+        </td>
+    </tr>
+</table>
+<div class="adb" align="center">
+    <div class="a18" align="center" style="position: relative;">
+        <table width="1024" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td align="left" height="50" class="bais font16 ">
+                    {notempty name="nav_f"}
+                    {volist name="nav_f" id="val" key="key"}
+                    <a href="{:url($val['url_value'])}{neq name='val.params' value=''}?{$val.params}{/neq}">{$val.title}</a>
+                    <?php if($key < count($nav_f)){ ?> | <?php } ?>
+                    {/volist}
+                    {/notempty}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="a1" align="center" style="background: #484848;">
+    <div class="a18" align="center">
+        <table width="1024" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td height="30" colspan="5">
+                </td>
+            </tr>
+            <tr>
+                <td width="189" align="center" valign="top">
+                    <div align="center">
+                        <img alt="关注微博" src="{$configuration.wb_img|get_file_path}" title="关注微博" />
+                        <div class="font14 bais" style="padding-top: 10px;">
+                            关注微博</div>
+                    </div>
+                </td>
+                <td width="175" align="center" valign="top">
+                    <div align="center">
+                        <img alt="关注微信" src="{$configuration.wx_img|get_file_path}" title="关注微信" />
+                        <div class="font14 bais" style="padding-top: 10px;">
+                            关注微信</div>
+                    </div>
+                </td>
+                <td width="20">
+                </td>
+                <td width="310" align="left" valign="top" colspan="2">
+                    <div class="font16 bais" style=" font-size:16px">
+                        一纸馋总部</div>
+                    <div class="font12 bais" style="padding-top: 15px; line-height: 26px;font-size:16px">
+                        客服电话：{$configuration.mobile}<br />
+                        400热线：{$configuration.tel}<br />
+                        总部地址：{$configuration.address}<br />
+                        投资有风险  选择需谨慎
+                    </div>
+                </td>
+                <td width="20">
+                </td>
+                <td>
+                    <div class="lyzhe" >
+                        <div class="ly1">
+                            <span>姓名：</span>
+                            <input type="text" name="" id="txtName" value=""><br />
+                        </div>
+                        <div class="ly1">
+                            <span>电话：</span>
+                            <input type="text" name="" id="Phone" value=""><br />
+                        </div>
+                        <div class="ly1">
+                            <span>留言：</span>
+                            <textarea name="" rows="" cols="" id="txtContent"></textarea>
+                        </div>
+                        <input type="button" name="" id="tjly" value="在线申请" class="b4" onclick="FromSubmit2()">
+                    </div>
+                </td>
+            </tr>
+            <tr style="    float: left; width: 326%;margin-top: -116px;margin-left: 67px;">
+                <td align="left" colspan="5" class="font14 bais" style="">
+                    2014 ©成都餐协餐饮管理有限公司. ALL rights reservd. <a href="http://www.beian.miit.gov.cn/">蜀ICP备12020698号-3</a>
+                </td>
+            </tr>
+            <tr style="    float: left;width: 126%; margin-top: -97px;margin-left: 65px;">
+                <td height="30" colspan="5" align="center" class="font14 bais">
+                    友情链接： <a href="http://www.1zhichan.com" target="_blank">纸上烤肉</a> &nbsp; &nbsp;
+                    <script type="text/javascript">
+                        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7df9947f924dba11b94fe85fad935d1d' type='text/javascript'%3E%3C/script%3E"));
+                    </script>
+
+                    <script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/10132959/3";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+                </td>
+            </tr>
+            <tr>
+                <td height="20" colspan="5">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div id="back-to-top" style="display: block;">
+    <a href="#top">
+        <img alt="" src="/static/index/image/xtop.png" />
+    </a>
+</div>
+
+<div id="kf_nav">
+    <ul>
+        <li class="kf_2"><a class="xy_53" href="https://tb.53kf.com/code/client/10132959/3"
+                            target="_blank">
+            <img alt="" src="/static/index/image/kf-1.jpg" /></a></li>
+        <li class="qq"><a href="http://wpa.qq.com/msgrd?V=1&Uin=1434414081&Site=一纸馋烤肉&Menu=yes" target="_blank">
+            <img alt="" src="/static/index/image/kf-2.jpg" /></a></li>
+        <li class="tel"><a href="https://tb.53kf.com/code/client/10132959/3">
+            <img alt="" src="/static/index/image/kf-3.jpg" /></a></li>
+        <li class="dw"><a href="https://tb.53kf.com/code/client/10132959/3"
+                          target="_blank">
+            <img alt="" src="/static/index/image/kf-4.jpg"/></a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#back-to-top").hide();
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 100) {
+                    $("#back-to-top").fadeIn(500);
+                }
+                else {
+                    $("#back-to-top").fadeOut(500);
+                }
+            });
+            $("#back-to-top").click(function () {
+                $('body,html').animate({ scrollTop: 0 }, 100);
+                return false;
+            });
+        });
+    });
+</script>
+
+<script>
+    function FromSubmit2() {
+        $("#tjly").attr("disabled", "disabled");
+        var name = $("#txtName").val();
+        var phone = $("#Phone").val();
+        var content = $("#txtContent").val();
+        if (phone.length == 0) {
+            alert("请填写必填信息");
+            $("#tjly").removeAttr("disabled");
+            return false;
+        }
+        else if (phone.length > 11 || phone.length < 7) {
+            alert("请填写正确手机号码");
+            $("#tjly").removeAttr("disabled");
+            return false;
+        }
+        $.ajax({
+            url:"{:url('index/Home/insert_message')}",
+            type:"POST",
+            data:{
+                name:name,
+                phone:phone,
+                content:content,
+            },
+            success:function(res){
+                //console.log(res);
+                if(res.code == 1){
+                    alert(res.msg);
+                    history.go(0);
+                }else{
+                    alert(res.msg);
+                    $("#tjly").removeAttr("disabled");
+                }
+            },
+            error: function(message) {
+                //console.log(message);
+                alert(message);
+                $("#tjly").removeAttr("disabled");
+            }
+        });
+    }
+</script>

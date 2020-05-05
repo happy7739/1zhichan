@@ -1,0 +1,611 @@
+{extend name="public/base" /}
+
+<!-- 当前页面的样式及JS -->
+{block name="custom"}
+<meta name="baidu-site-verification" content="xfB9IRbv85" />
+<link href="/static/index/css/focus.css" rel="stylesheet" type="text/css" />
+<link href="/static/index/css/sqhs.css" rel="stylesheet" type="text/css" />
+<link href="/static/index/css/wns.css" rel="stylesheet" type="text/css" />
+<script src="/static/index/js/jquery.DB_tabMotionBanner.min.js" type="text/javascript"></script>
+<!--swiper-->
+<link rel="stylesheet" href="/static/index/swiper/css/swiper.min.css">
+<style>
+    .news a:hover{color:#FF0000}
+
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 12px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-pagination-bullet {
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        line-height: 15px;
+        font-size: 12px;
+        color:#000;
+        opacity: 1;
+        background: rgba(0,0,0,0.2);
+    }
+    .swiper-pagination-bullet-active {
+        color:#fff;
+        background: #007aff;
+    }
+    .swiper-container2 {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+{/block}
+
+<!--内容-->
+{block name="main"}
+<!--Banner-->
+<div class="DB_tab25">
+    <ul class="DB_bgSet">
+        {notempty name="banner_bg"}
+            <?php
+                foreach($banner_bg as $key => $val){
+                    $banner_bg_url = get_file_path($val['img']);
+            ?>
+        <li style="background: url({$banner_bg_url}) no-repeat top center;"></li>
+            <?php } ?>
+        {/notempty}
+    </ul>
+    <ul class="DB_imgSet">
+        {notempty name="banner"}
+        {volist name="banner" id="val" key="key"}
+        <li>
+            <a href="{:url($val['url'])}{neq name='val.params' value=''}?{$val.params}{/neq}">
+                <img alt="{$val.alt1}" class="DB_{$key}_1" title="{$val.title1}" src="{$val.img1|get_file_path}" />
+                <img alt="{$val.alt2}" class="DB_{$key}_2" title="{$val.title2}" src="{$val.img2|get_file_path}" />
+            </a>
+        </li>
+        {/volist}
+        {/notempty}
+    </ul>
+    <div class="DB_menuWrap">
+        <ul class="DB_menuSet">
+        {notempty name="banner"}
+        {volist name="banner" id="val"}
+            <li>
+                <img src="/static/index/image/btn_off.png" alt="{$key.alt}" />
+            </li>
+        {/volist}
+        {/notempty}
+        </ul>
+        <div class="DB_next">
+            <img alt="" src="/static/index/image/nextArrow.png" alt="下一页" /></div>
+        <div class="DB_prev">
+            <img alt="" src="/static/index/image/prevArrow.png" alt="上一页" /></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.DB_tab25').DB_tabMotionBanner({
+        key: 'b28551',
+        autoRollingTime: 3000,
+        bgSpeed: 500,
+        motion: {
+            DB_1_1: { left: -100, opacity: 0, speed: 1000, delay: 500 },
+            DB_1_2: { left: 70, opacity: 0, speed: 1000, delay: 1000 },
+            DB_2_1: { left: -100, opacity: 0, speed: 1000, delay: 500 },
+            DB_2_2: { left: 70, opacity: 0, speed: 1000, delay: 1000 },
+            DB_3_1: { left: -100, opacity: 0, speed: 1000, delay: 500 },
+            DB_3_2: { left: 50, opacity: 0, speed: 1000, delay: 1000 },
+            DB_4_1: { left: -50, opacity: 0, speed: 1000, delay: 500 },
+            DB_4_2: { left: 50, opacity: 0, speed: 1000, delay: 1000 },
+
+            end: null
+        }
+    })
+</script>
+<div style="clear: both;">
+</div>
+
+<div class="a12" align="center">
+    <div class="a11" align="center">
+        <table width="1024" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td height="10">
+                </td>
+            </tr>
+        </table>
+        <!--品牌介绍、媒体报道、联系我们-->
+        <table width="1024" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td width="333" align="center" valign="top">
+                    <div class="wx_tips2 j_tips2" align="center">
+                        <div class="tips_bd2 wen1">
+                            <table width="333" align="center" height="120" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="43" height="39" align="center" valign="top">
+                                    </td>
+                                    <td width="151" align="left" valign="top">
+                                        <div class="font20" style="padding-top: 15px;">
+                                            <a href="{:url('index/aboutus/index')}?cat=5"><b>品牌介绍</b></a></div>
+                                        <div class="font16" style="padding-top: 5px;">
+                                        </div>
+                                        <div class="font12" style="margin-top: 15px; padding: 3px;">
+                                            来自韩国的纸上烤肉</div>
+                                    </td>
+                                    <td width="139" align="center">
+                                        <a href="{:url('index/aboutus/index')}?cat=5" title="品牌介绍">
+                                            <img alt="" src="/static/index/image/index/20150805111800_49564.png" title="品牌介绍" /></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+                <td width="12" align="center" valign="top">
+                    <div style="padding-top: 10px;">
+                        <img alt="" src="/static/index/image/lint.png" /></div>
+                </td>
+                <td width="333" align="center" valign="top">
+                    <div class="wx_tips2 j_tips2" align="center">
+                        <div class="tips_bd2 wen2">
+                            <table width="333" align="center" height="120" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="43" height="39" align="center" valign="top">
+                                    </td>
+                                    <td width="151" align="left" valign="top">
+                                        <div class="font20" style="padding-top: 15px;">
+                                            <a href="{:url('index/project/index')}"><b>媒体报道</b></a></div>
+                                        <div class="font16" style="padding-top: 5px;">
+                                        </div>
+                                        <div style="padding-top: 15px;">
+                                            <img alt="媒体报道" src="/static/index/image/sbs.jpg" /></div>
+                                    </td>
+                                    <td width="139" align="center">
+                                        <a href="{:url('index/project/index')}" title="媒体报道">
+                                            <img alt="媒体报道" src="/static/index/image/index/20150805111740_91859.png" title="媒体报道" /></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+                <td width="12" align="center" valign="top">
+                    <div style="padding-top: 10px;">
+                        <img alt="" src="/static/index/image/lint.png" /></div>
+                </td>
+                <td width="333" align="center" valign="top">
+                    <div class="wx_tips2 j_tips2" align="center">
+                        <div class="tips_bd2 wen3">
+                            <table width="333" align="center" height="120" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="43" height="39" align="center" valign="top">
+                                        <div style="padding-top: 43px;">
+                                            <img alt="" src="/static/index/image/adds.png" /></div>
+                                    </td>
+                                    <td width="151" align="left" valign="top">
+                                        <div class="font20 " style="padding-top: 15px;">
+                                            <a href="{:url('index/contactus/index')}"><b>联系我们</b></a></div>
+                                        <div class="font12" style="padding-top: 5px; line-height: 16px;">
+                                            {$configuration.address}</div>
+                                        <div class="font20" style="padding-top: 5px;">
+                                            {$configuration.mobile}</div>
+                                    </td>
+                                    <td width="139" align="center">
+                                        <a href="{:url('index/contactus/index')}" title="联系我们">
+                                            <img alt="联系我们" src="/static/index/image/index/logo1.png" title="联系我们" /></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table width="1024" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td height="28">
+                </td>
+            </tr>
+        </table>
+        <div style="clear: both;">
+        </div>
+        <table width="1024" align="center" cellpadding="0" cellspacing="0" border="0">
+            <!-- book -->
+            <tr>
+                <td width="590" valign="top" style="position: relative;">
+                    <!-- Swiper -->
+                    <div class="swiper-container3" style="width: 590px;height: 420px;">
+                        <div class="swiper-wrapper">
+                            {notempty name="album"}
+                            {volist name="album" id="val"}
+                            <div class="swiper-slide" style="background-image:url({$val.img|get_file_path});"></div>
+                            {/volist}
+                            {/notempty}
+                        </div>
+
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                    <!-- Swiper JS -->
+                    <script src="/static/index/swiper/js/swiper.min.js"></script>
+                    <script>
+                        var swiper = new Swiper('.swiper-container3', {
+                            effect: 'flip',
+                            grabCursor: true,
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            },
+                            autoplay: {
+                                delay: 3000,
+                                stopOnLastSlide: false,
+                                disableOnInteraction: false,
+                            },
+                            loop:true,
+                        });
+                    </script>
+                </td>
+                <td width="14">
+                </td>
+                <td width="420" align="center" valign="top">
+                    <div class="asidebox box-traveller" align="left">
+                        <div class="hots">
+                            <img alt="" src="/static/index/image/hots.png" />
+                        </div>
+                        <!-- Swiper -->
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/static/index/image/index/20150806012606_20505.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/static/index/image/index/20150806012615_62355.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/static/index/image/index/20150806012630_10950.jpg">
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+
+                        <!-- Initialize Swiper -->
+                        <script>
+                            var swiper = new Swiper('.swiper-container', {
+                                pagination: {
+                                    el: '.swiper-pagination',
+                                    clickable: true,
+                                    renderBullet: function (index, className) {
+                                        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                                    },
+                                },
+                                autoplay: {
+                                  delay: 3000,
+                                  stopOnLastSlide: false,
+                                  disableOnInteraction: false,
+                                },
+                            });
+                        </script>
+                    </div>
+                    <table width="420" align="center" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td height="5">
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="420" align="center" bgcolor="#f36800" cellpadding="0" cellspacing="0"
+                           border="0" class="news">
+                        <tr>
+                            <td height="6">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top">
+                                <div align="center" style="width: 408px; margin: 0 auto; background: #FFFFFF;">
+                                    <table width="368" align="center" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td height="6">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table width="368" align="center" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td width="35" height="25">
+                                                <img alt="" src="/static/index/image/news.png" />
+                                            </td>
+                                            <td width="302" class="font24" align="left">
+                                                NEWS
+                                            </td>
+                                            <td width="31" align="right">
+                                                <a href="{:url('index/news/index')}?cat=29" style="font-size: 38px;">+</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table width="368" align="center" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td height="3">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    {notempty name="news"}
+                                    {volist name="news" id="val"}
+                                    <table width="368" border="0" cellpadding="0" cellspacing="0" align="center">
+                                        <tbody>
+                                        <tr>
+                                            <td width="280" align="left">
+                                                <div style="width: 280px; overflow: hidden; height: 26px; line-height: 26px;" class="font13">
+                                                    <a href="{:url('index/news/details')}?cat={$val.pid}&page=1&id={$val.id}" title="{$val.title}">
+                                                        {$val.title}
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td width="88" class="font12" align="right">
+                                                {$val.time}
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    {/volist}
+                                    {/notempty}
+                                    <table width="368" align="center" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td height="9">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="6">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table width="1024" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td height="30">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div style="clear: both;">
+</div>
+<table width="1000" align="center" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td height="460" align="center" valign="top">
+        </td>
+    </tr>
+</table>
+<script src="/static/index/js/modernizr.js" type="text/javascript"></script>
+<div class="a22" align="center">
+    <div class="a23" align="center">
+        <table width="1400" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td height="52" align="center" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="top">
+                    <a href="{:url('index/food/index')}?cat=10">
+                        <img alt="" src="/static/index/image/mepic.png" /></a>
+                </td>
+            </tr>
+        </table>
+    {notempty name="food"}
+    {volist name="food" id="val" key="key"}
+        <div class="pro{$key}">
+            <table width="290" align="center" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td align="center" valign="top">
+                        <div class="hex" style="background: url({$val['img']|get_file_path}) no-repeat;">
+                            <a href="{:url($val['url'])}" title="{$val['title']}"></a>
+                            <div class="corner-1">
+                            </div>
+                            <div class="corner-2">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="left">
+                        <div class="wx_tips1 j_tips1" align="center">
+                            <div class="tips_hd1">
+                                <a href="{$val['url']}" title="{$val['title']}">
+                                    <br />
+                                    <font class="font30">{$val['title']}</font></a>
+                            </div>
+                            <div class="tips_bd1">
+                                <a href="{:url($val['url'])}" title="{$val['title']}">
+                                    <img src="/static/index/image/index/20150805165119_23331.png" alt="{$val['alt']}" title="{$val['title']}" /></a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    {/volist}
+    {/notempty}
+
+    </div>
+</div>
+<div class="a13" align="center">
+    <div class="a18" align="center">
+        <table width="1000" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td height="30" align="center" valign="top">
+                </td>
+            </tr>
+        </table>
+        <table width="1000" align="center" cellpadding="0" cellspacing="0" border="0" style="border-bottom: 2px solid #ffffff;">
+            <tr>
+                <td width="489" height="30" align="left">
+                    <img alt="店铺实拍" src="/static/index/image/nice.png" />
+                </td>
+                <td width="511" align="left" class="font24 bais">
+
+                </td>
+            </tr>
+            <tr>
+                <td height="10" colspan="2">
+                </td>
+            </tr>
+            <tr>
+                <td height="30" colspan="2" class="font24 bais" align="left">
+                    店铺实拍,成功其实并不难
+                </td>
+            </tr>
+            <tr>
+                <td height="5" colspan="2">
+                </td>
+            </tr>
+        </table>
+        <table width="1000" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td height="20" align="center" valign="top">
+                </td>
+            </tr>
+        </table>
+        <table width="1000" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+            {notempty name="store"}
+            {volist name="store" id="val"}
+                <td width="193" align="center" valign="top" height="100" bgcolor="#FFFFFF">
+                    <div align="center">
+                        <table width="170" align="center" cellpadding="0" cellspacing="0" border="0">
+                            <tr><td height="5"></td></tr>
+                            <tr>
+                                <td align="center" valign="top">
+                                    <a href="{:url($val['url'])}" title="{$val.title}">
+                                        <img alt="{$val.alt}" src="{$val.img|get_file_path}" title="{$val.title}" />
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="10"></td>
+                            </tr>
+                        </table>
+                        <table width="145" align="center" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td height="20" class="font16 jhs"></td>
+                            </tr>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <div class="bhs">
+                                        <a href="{:url($val['url'])}" title="{$val.title}">{$val.title}</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr><td height="10"></td></tr>
+                            <tr>
+                                <td align="left" class="font12" style="line-height: 18px;">
+                                    {$val.desc}
+                                </td>
+                            </tr>
+                            <tr><td height="10"></td></tr>
+                        </table>
+                    </div>
+                </td>
+                <td width="76"></td>
+            {/volist}
+            {/notempty}
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="a1" align="center">
+    <div align="center">
+        <table width="1024" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td height="50">
+                </td>
+            </tr>
+        </table>
+        <table width="1024" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td height="209">
+                    <div style="width: 1100px; height: 230px;">
+                        <div class="index_cp pdiv" align="center">
+                            <div class="rollBox">
+                                <div class="LeftBotton"></div>
+                                <div class="Cont" id="ISL_Cont">
+                                    <!-- Swiper .swiper-button-prev, .swiper-button-next-->
+                                    <div class="swiper-container2">
+                                        <div class="swiper-wrapper">
+                                        {notempty name="roll"}
+                                            {volist name="roll" id="val"}
+                                            <div class="swiper-slide">
+                                                <a href="{$val.url}" target="_blank">
+                                                    <img src="{$val.img|get_file_path}" title="{$val.title}" alt="{$val.alt}" height="209"
+                                                     width="301" />
+                                                </a>
+                                            </div>
+                                            {/volist}
+                                        {/notempty}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="RightBotton"></div>
+                                <!-- Initialize Swiper -->
+                                <script>
+                                    var swiper = new Swiper('.swiper-container2', {
+                                        slidesPerView: 3,
+                                        direction: getDirection(),
+                                        navigation: {
+                                            nextEl: '.RightBotton',
+                                            prevEl: '.LeftBotton',
+                                        },
+                                        on: {
+                                            resize: function () {
+                                                swiper.changeDirection(getDirection());
+                                            }
+                                        },
+                                        autoplay: {
+                                          delay: 3000,
+                                          stopOnLastSlide: false,
+                                          disableOnInteraction: false,
+                                        },
+                                        loop : true,
+                                    });
+
+                                    function getDirection() {
+                                        var windowWidth = window.innerWidth;
+                                        var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+
+                                        return direction;
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+{/block}

@@ -1,0 +1,119 @@
+{extend name="public/base" /}
+
+<!-- 当前页面的样式及JS -->
+{block name="custom"}
+{/block}
+
+<!--内容-->
+{block name="main"}
+
+<div class="a1" align="center">
+    <div class="a15" align="center">
+        <table width="910" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td height="50">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div align="left" class="font14" style="line-height: 0px;">
+                        <div class="cnr">
+                            {notempty name="data1"}
+                            {volist name="data1" id="val"}
+                            <img alt="" src="{$val.img|get_file_path}" />
+                            {/volist}
+                            {/notempty}
+                            <div style='background: url("{$bg_id|get_file_path}"); width: 910px; height: 364px;line-height: 27px;'>
+                                <ul class="dlzqtable">
+                                    <li class="dlzqtablefw">
+                                        项目
+                                    </li>
+                                    <li class="dlzqtablefw">
+                                        县（市、地辖区）级代理
+                                    </li>
+                                    <li class="dlzqtablefw">
+                                        地级市代理
+                                    </li>
+                                    <li class="dlzqtablefw">
+                                        省会城市代理
+                                    </li>
+                                    <li class="dlzqtablefw">
+                                        直辖市代理
+                                    </li>
+                                    <li class="dlzqtablefw">
+                                        省级代理
+                                    </li>
+                                    <li class="dlzqtablefw">
+                                        区域划分
+                                    </li>
+                                    <li>
+                                        县、县级市、市辖区
+                                    </li>
+                                    <li>
+                                        含所辖区、市、县
+                                    </li>
+                                    <li>
+                                        省会城市代理
+                                    </li>
+                                    <li>
+                                        北京、上海、天津、重庆
+                                    </li>
+                                    <li>
+                                        全省行政所辖范围
+                                    </li>
+                                    <li class="dlzqtablefw">
+                                        区域代理费
+                                    </li>
+                                    <li>
+                                        30万
+                                    </li>
+                                    <li>
+                                        50万
+                                    </li>
+                                    <li>
+                                        100万
+                                    </li>
+                                    <li>
+                                        100万
+                                    </li>
+                                    <li>
+                                        200万
+                                    </li>
+                                    <li class="dlzqtablefw">
+                                        年度运营服务费
+                                    </li>
+                                    <li>
+                                        5000元/年
+                                    </li>
+                                    <li>
+                                        5000元/年
+                                    </li>
+                                    <li>
+                                        5000元/年
+                                    </li>
+                                    <li>
+                                        8000元/年
+                                    </li>
+                                    <li>
+                                        10000元/年
+                                    </li>
+                                </ul>
+                            </div>
+                            {notempty name="data2"}
+                            {volist name="data2" id="val"}
+                            <img alt="" src="{$val.img|get_file_path}" />
+                            {/volist}
+                            {/notempty}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="30">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{/block}

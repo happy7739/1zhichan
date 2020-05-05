@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>{$title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <!-- 公共样式和JS -->
+    <meta name="robots" content="all" />
+    <meta name="author" content="成都餐协餐饮管理有限公司,蜀ICP备12020698号-3" />
+    <meta name="keywords" content="{$configuration.keywords}" />
+    <meta name="description" content="{$configuration.description}" />
+    <link rel="shortcut icon" href="/static/index/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="/static/index/css/css.css" />
+    <link type="text/css" rel="stylesheet" href="/static/index/css/style.css" />
+    <script src="/static/index/js/jquery.min.1.8.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function uaredirect(f) { try { if (document.getElementById("bdmark") != null) { return } var b = false; if (arguments[1]) { var e = window.location.host; var a = window.location.href; if (isSubdomain(arguments[1], e) == 1) { f = f + "/#m/" + a; b = true } else { if (isSubdomain(arguments[1], e) == 2) { f = f + "/#m/" + a; b = true } else { f = a; b = false } } } else { b = true } if (b) { var c = window.location.hash; if (!c.match("fromapp")) { if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i))) { location.replace(f) } } } } catch (d) { } } function isSubdomain(c, d) { this.getdomain = function (f) { var e = f.indexOf("://"); if (e > 0) { var h = f.substr(e + 3) } else { var h = f } var g = /^www\./; if (g.test(h)) { h = h.substr(4) } return h }; if (c == d) { return 1 } else { var c = this.getdomain(c); var b = this.getdomain(d); if (c == b) { return 1 } else { c = c.replace(".", "\\."); var a = new RegExp("\\." + c + "$"); if (b.match(a)) { return 2 } else { return 0 } } } };
+    </script>
+    <script type="text/javascript">
+        uaredirect("http://www.wap.1zhichan.com/?laiyuan=baiduziranliuliang");
+    </script>
+    <!-- 当前页面的样式及JS -->
+    {block name="custom"}{/block}
+</head>
+<body>
+{block name="header"}{include file="public/header" /}{/block}
+{block name="main"}{/block}
+{block name="footer"}{include file="public:footer" /}{/block}
+{block name="model"}{/block}
+</body>
+</html>

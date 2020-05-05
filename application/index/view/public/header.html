@@ -1,0 +1,117 @@
+<!--头部-->
+<div class="a1" align="center">
+    <div class="a11" align="center">
+        <table width="1024" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td width="164" align="left" valign="top">
+                    <table width="100" align="center" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td height="5">
+                            </td>
+                        </tr>
+                    </table>
+                    <a href="/index.html">
+                        <img alt="一纸馋" src="{$configuration.logo|get_file_path}" /></a>
+                    <table width="100" align="center" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td height="5">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="27">
+                </td>
+                <td width="833" align="left" valign="top">
+                    <div class="wx_tips5 j_tips5" align="center">
+                        <div class="tips_hd5">
+                            <div class="menu sy">
+                                <ul class="clearfix">
+                                    {notempty name="nav_1"}
+                                        {volist name="nav_1" id="tab"}
+                                    <li>
+                                        <a id="active_{$tab.id}" href="{:url($tab['url_value'])}{neq name='tab.params' value=''}?{$tab.params}{/neq}">
+                                            <b>{$tab.title}</b><br />
+                                        </a>
+                                    </li>
+                                        {/volist}
+                                    {/notempty}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tips_bd5">
+                            <div style="z-index: 9999; width: 1141px; background: url(/static/index/image/sbgs.png) repeat-x;
+                                    height: 240px;">
+                                <table width="1024" border="0" cellpadding="0" cellspacing="0" align="center">
+                                    <tr>
+                                        <td height="20">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table width="1024" border="0" cellpadding="0" cellspacing="0" align="center">
+                                    <tr>
+                                        <td  align="center" valign="top" >
+                                            <img style=" width:310px; height:200px" alt="首页" src="/static/index/image/tqs.png" />
+                                        </td>
+                                        {notempty name="nav_2"}
+                                        {foreach name="nav_2" item="val" key="key"}
+                                        <td align="left" valign="top">
+                                            <div style="line-height: 28px;    text-align: center;width:119px" class="font13">
+                                                {volist name="val" id="list"}
+                                                <a id="active_{$list.id}" href="{:url($list['url_value'])}{neq name='list.params' value=''}?{$list.params}{/neq}">{$list.title}</a><br />
+                                                {/volist}
+                                            </div>
+                                        </td>
+                                        {/foreach}
+                                        {/notempty}
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div style="clear: both;">
+</div>
+<!--二级导航栏-->
+{notempty name="nav_h"}
+<div class="a1" align="center" style="border-bottom: 1px solid #e0dede;">
+    <div class="a11" align="center" style="border-left: 1px solid #e0dede; border-right: 1px solid #e0dede;">
+        <table width="1024" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td width="50" height="50" align="center">
+                    <a href="/">
+                        <img alt="" src="/static/index/image/isy.jpg" /></a>
+                </td>
+                <td width="974" align="center" valign="top">
+                    <table width="974" border="0" cellpadding="0" cellspacing="0" align="center">
+                        <tr>
+                            {volist name="nav_h" id="val"}
+                            <td id="tebs_{$val.id}" class=" tebs cline ">
+                                <a href="{:url($val['url_value'])}{neq name='val.params' value=''}?{$val.params}{/neq}">{$val.title}</a>
+                            </td>
+                            {/volist}
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+{/notempty}
+<script>
+    window.onload =function() {
+        var nav_pid =  "{$nav_pid}";
+        var nav_id =  "{$nav_id}";
+        var str1 = '#active_' + nav_pid;
+        //console.log(nav_pid);
+        $(str1).addClass('active');
+        if (nav_id != 0){
+            //console.log(nav_id);
+            var str2 = '#tebs_' + nav_id;
+            $(str2).addClass('tebs2');
+        }
+    }
+</script>

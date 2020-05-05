@@ -1,0 +1,181 @@
+/* @Booklet
+----------------------------------------*/
+	.booklet           {width:800px; height:600px; position:relative; /*background:#fff;*/ margin:0 auto 10px;}
+	.booklet .b-page  {left:0; top:0; position:absolute; overflow:hidden; padding:0;}
+	
+	.booklet .b-pN  {}
+	.booklet .b-p0  {}
+	.booklet .b-p1  {}
+	.booklet .b-p2  {}    
+	.booklet .b-p3  {}
+	.booklet .b-p4  {}
+	
+	/*.booklet .b-load  {display:none;}*/
+   
+   	/* Page Wrappers */
+	.booklet .b-wrap       {top:0; position:absolute;}
+	.booklet .b-wrap-left  {background:#fdfdfd;/*opacity: 0.8;*/}
+	.booklet .b-wrap-right {background:#fdfdfd;/*efefef;opacity: 0.8;*/}
+	
+	.booklet .b-pN .b-wrap,
+	.booklet .b-p1 .b-wrap,
+	.booklet .b-p2 .b-wrap,
+	.booklet .b-p3 .b-wrap,
+	.booklet .b-p4 .b-wrap  {left:0;}
+	.booklet .b-p0 .b-wrap  {right:0;}
+	
+   	/* Custom Page Types */
+	.booklet .b-page-blank  {padding:0; width:100%; height:100%;}
+	.booklet .b-page-cover  {padding:0; width:100%; height:100%; background:#925C0E;}
+	.booklet .b-page-cover h3  {color:#fff; text-shadow:0px 1px 3px #222;}
+   
+   	/* Page Numbers */
+	.booklet .b-counter {bottom:10px; position:absolute; display:block; width:25px; height:20px; background:#ccc; color:#444; text-align:center; font-family:Georgia, "Times New Roman", Times, serif; font-size:10px; padding:5px 0 0;}
+	.booklet .b-wrap-left  .b-counter  {left:10px;}
+	.booklet .b-wrap-right .b-counter {right:10px;}
+   
+   	/* Page Shadows */
+	.booklet .b-shadow-f  {right:0; top:0; position:absolute; opacity:0; }
+	.booklet .b-shadow-b  {left:0;  top:0; position:absolute; opacity:0; }
+	
+
+	
+   	/* Overlay Controls */
+	.booklet .b-overlay      {top:0; position:absolute; height:100%; width:50%;}
+	.booklet .b-overlay-prev {left:0;}
+	.booklet .b-overlay-next {right:0;}
+	
+   	/* Tab Controls */
+	.booklet .b-tab        {background:#000; height:40px; width:100%; padding:10px 0 0; text-align:center; color:#ccc; position:absolute; font-size:11px;}
+	.booklet .b-tab-prev   {left:0;}
+	.booklet .b-tab-next   {right:0;}
+	.booklet .b-tab:hover  {background:#aaa; color:#000;}	
+	
+   	/* Arrow Controls */
+	.booklet .b-arrow          {display:block; position:absolute; text-indent:-9999px; top:0; height:100%; width:74px;}
+	.booklet .b-arrow div      {display:none; text-indent:-9999px; height:170px; width:74px; position:absolute; left:0; top:25%;}
+	.booklet .b-arrow-next     {right:-80px;}
+	.booklet .b-arrow-prev     {left:-80px;}
+	.booklet .b-arrow-next div {background:url("/static/index/image/arrow-next.png") no-repeat left top;}
+	.booklet .b-arrow-prev div {background:url("/static/index/image/arrow-prev.png") no-repeat left top;}
+		
+/* @z-index fix (needed for older IE browsers)
+----------------------------------------*/
+	body              {z-index:0;}
+    .b-menu           {z-index:100;}
+    .b-selector       {z-index:100;}
+	.booklet          {z-index:10;}
+    .b-pN             {z-index:10;}
+    .b-p0             {z-index:10;}
+    .b-p1             {z-index:10;}
+    .b-p2             {z-index:10;}
+    .b-p3             {z-index:10;}
+    .b-p4             {z-index:10;}
+    .b-prev           {z-index:40;}
+    .b-next           {z-index:40;}
+    .b-counter        {z-index:40;}
+	
+/* @Menu Items
+----------------------------------------*/
+	.b-menu {height:40px; padding:0 0 10px;}
+	
+	.b-selector             {height:40px; position:relative; float:right; border:none; color:#cecece; cursor:pointer;}
+	.b-selector .b-current  {padding:8px 15px 12px; line-height:20px; min-width:18px; height:20px; display:block; background:#000; text-align:center;}
+	.b-selector-page        {width:auto; margin-left:15px;}
+	.b-selector-chapter     {width:auto;}
+	
+	.b-selector:hover            {color:#fff; background-position:left 0px;}
+	.b-selector:hover .b-current {background-position:right 0px;}
+	.b-selector ul               {overflow:hidden; margin:0; list-style:none !important; position:absolute; top:40px; right:0; padding:0 0 10px; background:#000; width:240px; font:normal 12px "Myriad Pro", Myriad, "DejaVu Sans Condensed","Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;}
+	.b-selector li               {border:none;}
+	.b-selector a                {color:#cecece; height:14px; text-decoration:none; display:block; padding:5px 10px;}
+	.b-selector a .b-text        {float:left; clear:none;}
+	.b-selector a .b-num         {float:right; clear:none;}
+	.b-selector a:hover          {color:#fff;}
+		
+.book_wrapper{
+	margin:50px auto;
+	padding-top:50px;
+	width:810px;
+	height:513px;
+	position:relative;
+	background:url(/static/index/image/sbgg.png) no-repeat;
+	background-size:810px 513px;
+}
+.book_wrapper img{
+	/*margin:10px 0px 5px 35px;*/
+	width:349px;
+	height: 450px;
+/*	padding:4px;
+	padding-left:10px;*/
+	-moz-box-shadow:1px 1px 1px #fff;
+	-webkit-box-shadow:1px 1px 1px #fff;
+	/*box-shadow:1px 1px 1px #fff;*/
+}
+
+a#next_page_button{
+	position:absolute;
+	cursor: pointer;
+	width:69px;
+	height:51px;
+	top:-26px;
+	right:65px;
+	background:url(/static/index/image/nex.png) no-repeat;}
+a#prev_page_button{
+	position:absolute;
+	cursor: pointer;
+	top:-22px;
+	left:62px;
+	width:69px;
+	height:51px;
+	background:url(/static/index/image/pre.png) no-repeat;
+}
+
+.booklet .b-page {
+    left: 0;
+    top: -23.8px;
+    position: absolute;
+    overflow: hidden;
+   }
+
+.booklet .b-wrap-left  {
+		
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topleft:10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.booklet .b-wrap-right {
+	/*margin-left:52px;*/
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.booklet .b-counter {
+	bottom:10px;
+	position:absolute;
+	display:block;
+	width:90%;
+	height:20px;
+	/*border-top:1px solid #ddd;*/
+	color:#222;
+	text-align:center;
+	font-size:12px;
+	padding:5px 0 0;
+	background:transparent;
+	/*-moz-box-shadow:0px -1px 1px #fff;
+	-webkit-box-shadow:0px -1px 1px #fff;
+	box-shadow:0px -1px 1px #fff;*/
+	opacity:0.8;
+}
+
+.booklet .b-wrap-right .b-counter {
+    right: 0px;}
+
+
+.book_wrapper .shg{display: block;width: 84px; height: 497px;position: absolute;z-index: 999; top:78px;left:456px;}

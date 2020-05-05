@@ -1,0 +1,38 @@
+{extend name="public/base" /}
+
+<!-- 当前页面的样式及JS -->
+{block name="custom"}
+{/block}
+
+<!--内容-->
+{block name="main"}
+
+<div class="a1" align="center">
+    <div class="a15" align="center">
+        <table width="910" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td height="50">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div align="left" class="font14" style="line-height: 0px;">
+                        <div class="cnr">
+                            {notempty name="data"}
+                            {volist name="data" id="val"}
+                            <img src="{$val.img|get_file_path}" />
+                            {/volist}
+                            {/notempty}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="30">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{/block}

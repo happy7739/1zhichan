@@ -1,0 +1,73 @@
+{extend name="public/base" /}
+
+<!-- 当前页面的样式及JS -->
+{block name="custom"}
+{/block}
+
+<!--内容-->
+{block name="main"}
+
+<div class="a1" align="center">
+    <div class="a17" align="center">
+        <table width="930" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tbody>
+            <tr>
+                <td height="39" class="font24" align="center">
+                    {$data.title}
+                </td>
+            </tr>
+            <tr>
+                <td height="15">
+                </td>
+            </tr>
+            <tr>
+                <td height="15" align="center" class="font14">
+                    {$data.time}
+                </td>
+            </tr>
+            <tr>
+                <td height="15">
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="line-height: 28px; padding: 10px 0; ">
+                    <div style="table-layout: fixed; word-break: break-all; width: 930px; margin: 0 auto;"
+                         class="font14 alcnr">
+                        {$data.text|raw}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="30">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table width="930" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tbody>
+            <tr>
+                <td width="715" align="left" class="font14" style="padding: 6px 0; line-height: 28px;">
+                    上一篇：
+                    {notempty name="up"}
+                    <a href="{:url('index/news/details')}?cat={$cat}&page={$page}&id={$up.id}">{$up.title}</a><br/>
+                    {/notempty}
+                    下一篇：
+                    {notempty name="lo"}
+                    <a href="{:url('index/news/details')}?cat={$cat}&page={$page}&id={$lo.id}">{$lo.title}</a>
+                    {/notempty}
+                </td>
+                <td width="215" align="right" class="font14">
+                    <a href="{:url('index/news/index')}?cat={$cat}&page={$page}">返回列表</a>
+                </td>
+            </tr>
+            <tr>
+                <td height="30">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{/block}
