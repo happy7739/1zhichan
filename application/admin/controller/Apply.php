@@ -38,11 +38,12 @@ class Apply extends Admin
 
         return ZBuilder::make('table')
             ->setTableName('message')
-            ->addTopButton('enable', ['title' => '设置已阅读'])
+            //->addTopButton('enable', ['title' => '设置已阅读'])
             ->addTopButton('delete')
             ->addRightButton('enable', ['title' => '设置已阅读'])
             ->addRightButton('details', $btn_access)
             ->addRightButton('delete')
+            ->replaceRightButton(['status' => ['in', '1']], '', ['enable'])
             ->addColumns([
                 ['id', 'ID'],
                 ['name', '姓名'],

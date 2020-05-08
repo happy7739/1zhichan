@@ -37,12 +37,13 @@ class Analysismessage extends Admin
         ];
 
         return ZBuilder::make('table')
-            ->setTableName('message')
-            ->addTopButton('enable', ['title' => '设置已阅读'])
+            ->setTableName('home_analysis_message')
+            //->addTopButton('enable', ['title' => '设置已阅读'])
             ->addTopButton('delete')
             ->addRightButton('enable', ['title' => '设置已阅读'])
             ->addRightButton('details', $btn_access)
             ->addRightButton('delete')
+            ->replaceRightButton(['status' => ['in', '1']], '', ['enable'])
             ->addColumns([
                 ['id', 'ID'],
                 ['tel', '联系方式'],

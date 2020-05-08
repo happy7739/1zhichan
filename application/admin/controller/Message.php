@@ -38,6 +38,7 @@ class Message extends Admin
             ->addTopButton('delete')
             ->addRightButton('enable', ['title' => '设置已阅读'])
             ->addRightButton('delete')
+            ->replaceRightButton(['status' => ['in', '1']], '', ['enable'])
             ->addColumns([
                 ['uid_send', '发送者', 'callback', 'get_nickname'],
                 ['type', '分类'],
